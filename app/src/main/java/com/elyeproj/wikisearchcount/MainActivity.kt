@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private var disposable: Disposable? = null
 
+    //creating the interface wikiApiServe
     private val wikiApiServe by lazy {
         WikiApiService.create()
     }
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 )
     }
 
+    //on pause => Dispose the resource( the var disposable)
     override fun onPause() {
         super.onPause()
         disposable?.dispose()

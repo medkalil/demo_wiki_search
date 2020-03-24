@@ -9,12 +9,16 @@ import retrofit2.http.Query
 
 interface WikiApiService {
 
+    //1st we add the internet permission in the manifest
+    //creating the get call to get data from api cal
+    //and specifing the parametre(query)
     @GET("api.php")
     fun hitCountCheck(@Query("action") action: String,
                        @Query("format") format: String,
                        @Query("list") list: String,
                        @Query("srsearch") srsearch: String): Observable<Model.Result>
 
+    //creating the retrofit with it :adapter+converter; in a companion obj
     companion object {
         fun create(): WikiApiService {
 
